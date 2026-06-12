@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Edu+AU+VIC+WA+NT+Hand&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jacques+Francois+Shadow&family=Kaushan+Script&family=Nova+Square&family=Outfit:wght@100..900&family=Ramaraja&display=swap");
+
+@import "tailwindcss";
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
