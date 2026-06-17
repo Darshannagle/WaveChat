@@ -40,7 +40,9 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use("/status", (req, res) => res.send("OK"));
 app.use("/api", routes);
-app.use("*", (req, res) => res.status(404).send("Not Found"));
+// app.all("*", (req, res) => {
+//   return res.status(404).send("Not Found");
+// });
 // DB Connection
 connectDB();
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
