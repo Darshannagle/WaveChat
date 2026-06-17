@@ -2,8 +2,8 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import http from "http";
-import { connectDB } from "./src/libs/DB";
-import routes from "./src/routes";
+import { connectDB } from "./libs/DB";
+import routes from "./routes";
 import { Server } from "socket.io";
 
 const app = express();

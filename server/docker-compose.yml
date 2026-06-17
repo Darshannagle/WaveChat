@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  server:
+    container_name: wavechat-server
+    # image: darshannagle/wavechat:0.0.1.RELEASE
+    build: .
+    ports:
+      - "${PORT}:5000"
+    restart: unless-stopped
+    environment:
+      - PORT=${PORT}
+      - DB_URL=${DB_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - CLOUDNARY_COUD_NAME=${CLOUDNARY_COUD_NAME}
+      - CLOUDNARY_API_KEY=${CLOUDNARY_API_KEY}
+      - CLOUDNARY_API_SECRET=${CLOUDNARY_API_SECRET}

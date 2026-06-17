@@ -1,9 +1,8 @@
-import bcrypt from "bcryptjs";
 import User from "../models/User";
 import { Request, Response } from "express";
 import { generateToken } from "../libs/Auth";
 import { cloudnary } from "../libs";
-import { ObjectId, Schema } from "mongoose";
+import bcrypt from "bcryptjs";
 
 export default class UserController {
   static signup = async (req: Request, res: Response) => {
@@ -40,11 +39,11 @@ export default class UserController {
   static login = async (req: Request, res: Response) => {
     try {
       const { email, password } = req.body;
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email }).select("+password");
       if (!user)
         return res.json({ status: false, message: "Account dones not exist" });
 
-      const isMatch = await bcrypt.compare(password, user?.password);
+      const isMatch = await bcrypt?.compare(password, user?.password);
 
       if (!isMatch)
         return res.json({ status: false, message: "Invalid credentials" });

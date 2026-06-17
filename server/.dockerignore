@@ -1,0 +1,63 @@
+# Node.js modules ( reinstall inside container)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn
+.npmrc
+.yarnrc
+
+# Environment files ( SENSITIVE - don't include)
+.env
+.env.*
+*.env
+.env.local
+.env.production
+.env.development
+
+# Git and version control
+.git/
+.gitignore
+.gitattributes
+
+# Docker files ( already in build context)
+Dockerfile
+.dockerignore
+*.md
+
+# Logs and debug
+logs/
+*.log
+npm-debug.log*
+
+# Cache and temp files
+.DS_Store
+*.swp
+*.tmp
+tmp/
+temp/
+.cache/
+
+# Build outputs ( if using multi-stage build)
+dist/
+# build/
+# .next/
+
+# Test files and coverage ( not needed in production)
+coverage/
+.nyc_output/
+__tests__/
+tests/
+*.test.js
+*.spec.js
+
+# Documentation ( not needed in container)
+README.md
+LICENSE
+docs/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace

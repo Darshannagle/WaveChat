@@ -1,5 +1,4 @@
-import { Schema } from "mongoose";
-import { io, userSocketMap } from "../..";
+import { userSocketMap } from "..";
 import { cloudnary } from "../libs";
 import { Message, User } from "../models";
 
