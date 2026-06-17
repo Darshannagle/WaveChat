@@ -6,5 +6,4 @@ const route = Router();
 
 route.use("/user", userRouter);
 route.use("/message", messageRouter);
-route.use("*", (req, res) => res.json({ status: false, message: "Not found" }));
 export default route;
