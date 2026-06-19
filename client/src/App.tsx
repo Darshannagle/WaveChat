@@ -9,7 +9,7 @@ import { AuthContext } from "./contaxt/AuthContext";
 const App = () => {
   const { authUser }: any = useContext(AuthContext);
   return (
-    <div className="bg-[url('./src/assets/image.png')] bg-cover">
+    <div className="bg-[url('./src/assets/background.png')] bg-cover">
       <Toaster />
 
       <Routes>
