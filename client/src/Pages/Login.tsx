@@ -7,14 +7,17 @@ const Login = () => {
   const [currState, setCurrState] = useState("Sign up");
   const [data, setData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (currState === "Sign up" && !isSubmitted) {
       setIsSubmitted(true);
       return;
     }
-    login(currState === "Sign up" ? "signup" : "login", data);
+    await login(currState === "Sign up" ? "signup" : "login", data);
+    setLoading(false);
   };
 
   const { login }: any = useContext(AuthContext);
@@ -26,7 +29,7 @@ const Login = () => {
 
       {/* right */}
       <form
-        onSubmit={onSubmitHandler}
+        // onSubmit={onSubmitHandler}
         className="border-2 bg-white/8 text-white border-gray-500 p-6 flex flex-col gap-5 rounded-lg shadow-lg"
       >
         <h2 className="font-medium text-2xl flex justify-between items-center">
@@ -103,8 +106,13 @@ const Login = () => {
           onClick={onSubmitHandler}
           type="submit"
           className="py-2 border border-violet-300 bg-violet-800/80 text-white-900 rounded-md cursor-pointer"
+          disabled={loading}
         >
-          {currState === "Sign up" ? "Create Account" : "Login"}
+          {loading
+            ? "Loading..."
+            : currState === "Sign up"
+              ? "Create Account"
+              : "Login"}
         </button>
         <div className="flex items-center gap-2 text-sm text-white-900">
           <input type="checkbox" />

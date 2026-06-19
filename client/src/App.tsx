@@ -5,11 +5,14 @@ import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import { Toaster } from "react-hot-toast";
 import { AuthContext } from "./contaxt/AuthContext";
-
+import background from "./assets/background.png";
 const App = () => {
   const { authUser }: any = useContext(AuthContext);
   return (
-    <div className="bg-[url('./src/assets/background.png')] bg-cover">
+    <div
+      className={`bg-bg-image bg-center bg-cover`}
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <Toaster />
 
       <Routes>
