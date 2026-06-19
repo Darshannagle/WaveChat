@@ -23,14 +23,14 @@ const Login = () => {
   const { login }: any = useContext(AuthContext);
 
   return (
-    <div className="min-h-screen bg-cover bg-center flex items-center justify-center gap-8 sm:justify-evenly max-sm:flex-col backdrop-blur-2xl">
+    <div className="min-h-screen bg-cover bg-center flex items-center justify-center gap-8 sm:justify-evenly max-sm:flex-col ">
       {/* left */}
       <img src={assets.logo_big} alt="" className="w-[min(30vw,400px)]" />
 
       {/* right */}
       <form
         // onSubmit={onSubmitHandler}
-        className="border-2 bg-white/8 text-white border-gray-500 p-6 flex flex-col gap-5 rounded-lg shadow-lg"
+        className="border-2 border-stone-500 text-white border-gray-500 p-6 flex flex-col gap-5 rounded-lg shadow-lg backdrop-blur-sm"
       >
         <h2 className="font-medium text-2xl flex justify-between items-center">
           {currState}

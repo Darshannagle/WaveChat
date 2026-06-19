@@ -10,7 +10,7 @@ const App = () => {
   const { authUser }: any = useContext(AuthContext);
   return (
     <div
-      className={`bg-bg-image bg-center bg-cover`}
+      className={`bg-cover`}
       style={{ backgroundImage: `url(${background})` }}
     >
       <Toaster />
